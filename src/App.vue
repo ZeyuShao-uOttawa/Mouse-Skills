@@ -7,10 +7,7 @@ import Tutorial from "./pages/Tutorial.vue";
 
 <template>
   <Navbar />
-  <Tutorial>
-    
-  </Tutorial>
-  <!-- <RouterView /> --> 
+  <RouterView /> 
 </template>
 
 <style scoped>

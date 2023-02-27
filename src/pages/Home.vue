@@ -3,8 +3,8 @@
 
 <template>
 
-    <div class="container" style="text-align: center; margin: 16rem auto; max-width:50%">
-        <div class="row" style="height: 20rem; margin: auto;">
+    <div class="container" style="text-align: center; margin: auto; height: 92vh;">
+        <div class="row" style="height: 55vh; margin: auto; padding-top: 25vh; max-width:60%;">
           <div class="col-6 menu" style="background-color: aquamarine;">Exercises</div>
           <div class="col-6">
             <div class="row" style="height: 100%;">
@@ -24,4 +24,6 @@
   display: flex;
   font-size: xx-large;
 }
+
+
 </style>
