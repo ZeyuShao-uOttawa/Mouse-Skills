@@ -6,7 +6,6 @@ import { RouterLink } from "vue-router";
 
   <nav class="navbar navbar-expand-lg bg-body-tertiary" style="padding: 0vh 2vw; padding-top: 2vh; height: 8vh;">
     <div class="container-fluid">
-      <!-- <a class="navbar-brand" href="#">Mouse Skills</a> -->
       <RouterLink class="navbar-brand" to="/home">Mouse Skills</RouterLink>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -17,7 +16,7 @@ import { RouterLink } from "vue-router";
             <RouterLink class="nav-link" to="/home">Home</RouterLink>
           </li>
           <li class="nav-item">
-            <RouterLink class="nav-link" to="/">Exercise</RouterLink>
+            <RouterLink class="nav-link" to="/exercises">Exercise</RouterLink>
           </li>
           <li class="nav-item">
             <RouterLink class="nav-link" to="/">About</RouterLink>
