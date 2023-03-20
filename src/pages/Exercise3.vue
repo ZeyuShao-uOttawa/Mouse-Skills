@@ -1,18 +1,20 @@
 <script setup lang="ts">
+import { ref } from 'vue';
+import emailInital from '@/assets/email.png';
+// var emailInital = ref('@/assets/email.png');
+
 </script>
 
 <template>
 
     <div class="container" style="text-align: center; margin: auto; height: 92vh;">
-        <div class="row" style="height: 55vh; margin: auto; padding-top: 25vh; max-width:60%;">
-          <div class="col-6 menu" style="background-color: aquamarine;">Exercises</div>
-          <div class="col-6">
-            <div class="row" style="height: 100%;">
-              <div class="col-12 menu" style="background-color: aqua;">Log In</div>
-              <div class="col-12 menu" style="background-color: blue;">Sign Up</div>
-            </div>
-          </div>
-        </div>
+      <h1>Mouse Skills Email Simulator</h1>
+      <div class="email">
+        <img :src="emailInital" alt="My Image" style="width:1280px; height:720px;" usemap="#my-map">
+        <map name="my-map">
+          <area shape="rect" coords="100,100,200,200" onclick="">
+        </map>
+      </div>
     </div>
 
 </template>
@@ -25,5 +27,13 @@
   font-size: xx-large;
 }
 
+/* .email-background{
+  background-image: url(../assets/email.png);
+} */
 
+area {
+  background-color: red;
+  opacity: 0.5;
+  cursor: pointer;
+}
 </style>

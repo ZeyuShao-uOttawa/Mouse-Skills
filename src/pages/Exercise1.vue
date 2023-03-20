@@ -33,7 +33,7 @@ setTimeout(() => {
 </script>
 
 <template>
-  <div class="container-fluid">
+  <div class="container-fluid" style="text-align: center; margin: auto; height: 92vh;">
     <h1>Click the button as fast as you can!</h1>
     <div class="game-area">
       <button v-if="showButton" id="game-button" @click="handleClick" :style="{ top: position_x + 'px', left: position_y + 'px' }"></button>
