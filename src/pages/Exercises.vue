@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { RouterLink } from "vue-router";
 </script>
 
 <template>
@@ -8,7 +7,7 @@ import { RouterLink } from "vue-router";
         <div class="text-center"><h2>Exercises</h2></div>
         <div class="card-group text-center center" style="margin: auto;">
             <div class="col-lg-3" id="project-card-div">
-            <a class="card-link" href="#"><RouterLink class="navbar-brand" to="/exercise1">
+            <a class="card-link" href="#">
                 <div class="card" id="project-card">
                 <img src="Assets/study1.png" class="card-img-top" alt="NOT LOADING" id="project-img">
                 <div class="card-body">
@@ -16,13 +15,13 @@ import { RouterLink } from "vue-router";
                     <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                 </div>
                 </div>
-            </RouterLink></a>
+            </a>
             </div>
             <div class="col-lg-1">
 
             </div>
             <div class="col-lg-3" id="project-card-div">
-            <a class="card-link" href="#"><RouterLink class="navbar-brand" to="/exercise2">
+            <a class="card-link" href="#">
                 <div class="card" id="project-card">
                 <img src="Assets/study1.png" class="card-img-top" alt="NOT LOADING" id="project-img">
                 <div class="card-body">
@@ -30,13 +29,13 @@ import { RouterLink } from "vue-router";
                     <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                 </div>
                 </div>
-            </RouterLink></a>
+            </a>
             </div>
             <div class="col-lg-1">
 
             </div>
             <div class="col-lg-3" id="project-card-div">
-            <a class="card-link" href="#"><RouterLink class="navbar-brand" to="/exercise3">
+            <a class="card-link" href="#">
                 <div class="card" id="project-card">
                 <img src="Assets/study1.png" class="card-img-top" alt="NOT LOADING" id="project-img">
                 <div class="card-body">
@@ -44,7 +43,7 @@ import { RouterLink } from "vue-router";
                     <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                 </div>
                 </div>
-            </RouterLink></a>
+            </a>
             </div>
         </div>
     </div>
