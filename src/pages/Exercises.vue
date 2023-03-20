@@ -3,7 +3,8 @@ import { RouterLink } from "vue-router";
 </script>
 
 <template>
-@@ -8,43 +7,43 @@ import { RouterLink } from "vue-router";
+
+    <div class="container" style="text-align: center; margin: auto; height: 92vh;">
         <div class="text-center"><h2>Exercises</h2></div>
         <div class="card-group text-center center" style="margin: auto;">
             <div class="col-lg-3" id="project-card-div">
@@ -47,3 +48,13 @@ import { RouterLink } from "vue-router";
             </div>
         </div>
     </div>
+
+</template>
+
+<style scoped>
+.center {
+  align-items: center; 
+  justify-content: center; 
+  display: flex;
+}
+</style>
