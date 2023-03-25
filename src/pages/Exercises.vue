@@ -22,7 +22,7 @@ import { RouterLink } from "vue-router";
 
             </div>
             <div class="col-lg-3" id="project-card-div">
-            <a class="card-link" href="#"><RouterLink class="navbar-brand" to="/exercise2">
+            <a class="card-link" href="#"><RouterLink class="navbar-brand" to="/exercise4">
                 <div class="card" id="project-card">
                 <img src="Assets/study1.png" class="card-img-top" alt="NOT LOADING" id="project-img">
                 <div class="card-body">
