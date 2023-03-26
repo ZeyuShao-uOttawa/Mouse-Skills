@@ -98,28 +98,11 @@
     mounted() {
       window.addEventListener("mousemove", this.handleDrag);
     },
-    beforeUnmount() {
+    beforeUnmounted() {
       window.removeEventListener("mousemove", this.handleDrag);
     },
   };
-  mounted() {
-  window.addEventListener("mousemove", this.handleDrag);
-  window.addEventListener("keydown", this.handleKeyDown);
-},
-beforeUnmount() {
-  window.removeEventListener("mousemove", this.handleDrag);
-  window.removeEventListener("keydown", this.handleKeyDown);
-},
-methods: {
-  handleKeyDown(event) {
-    if (event.key === "a") {
-      this.showHintModal = true;
-    }
-  },
-}
-
-
-
+  
   </script>
   
   <style scoped>
