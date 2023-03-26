@@ -4,6 +4,7 @@ import Exercises from "@/pages/Exercises.vue";
 import Exercise1 from "@/pages/Exercise1.vue";
 import Exercise2 from "@/pages/Exercise2.vue";
 import Exercise3 from "@/pages/Exercise3.vue";
+import Exercise4 from "@/pages/Exercise4.vue";
 import { createRouter, createWebHistory } from "vue-router";
 // import HomeView from "../views/HomeView.vue";
 
@@ -39,6 +40,11 @@ const router = createRouter({
       path: "/exercise3",
       name: "exercise3",
       component: Exercise3,
+    },
+    {
+      path: "/exercise4",
+      name: "exercise4",
+      component: Exercise4,
     },
     // {
     //   path: "/about",
