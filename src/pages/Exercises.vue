@@ -12,8 +12,7 @@ import { RouterLink } from "vue-router";
                 <div class="card" id="project-card">
                 <img src="Assets/study1.png" class="card-img-top" alt="NOT LOADING" id="project-img">
                 <div class="card-body">
-                    <h3 class="card-title">Special title treatment</h3>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <h3 class="card-title">Left Click Exercise</h3>
                 </div>
                 </div>
             </RouterLink></a>
@@ -26,8 +25,7 @@ import { RouterLink } from "vue-router";
                 <div class="card" id="project-card">
                 <img src="Assets/study1.png" class="card-img-top" alt="NOT LOADING" id="project-img">
                 <div class="card-body">
-                    <h3 class="card-title">Special title treatment</h3>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <h3 class="card-title">Drag Exercise</h3>
                 </div>
                 </div>
             </RouterLink></a>
@@ -40,8 +38,7 @@ import { RouterLink } from "vue-router";
                 <div class="card" id="project-card">
                 <img src="Assets/study1.png" class="card-img-top" alt="NOT LOADING" id="project-img">
                 <div class="card-body">
-                    <h3 class="card-title">Special title treatment</h3>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <h3 class="card-title">Email Exercise</h3>
                 </div>
                 </div>
             </RouterLink></a>
