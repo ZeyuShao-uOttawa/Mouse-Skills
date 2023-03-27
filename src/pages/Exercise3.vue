@@ -12,7 +12,7 @@ import emailInital from '@/assets/email.png';
       <div class="email">
         <img :src="emailInital" alt="My Image" style="width:1280px; height:720px;" usemap="#my-map">
         <map name="my-map">
-          <area shape="rect" coords="100,100,200,200" onclick="">
+          <area class="hitbox" shape="rect" coords="100,100,200,200" onclick="">
         </map>
       </div>
     </div>
@@ -31,9 +31,7 @@ import emailInital from '@/assets/email.png';
   background-image: url(../assets/email.png);
 } */
 
-area {
-  background-color: red;
-  opacity: 0.5;
+.hitbox {
   cursor: pointer;
 }
 </style>
