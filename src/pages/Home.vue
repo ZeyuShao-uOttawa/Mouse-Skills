@@ -9,7 +9,7 @@
           <div class="col-6">
             <div class="row" style="height: 100%;">
               <div class="col-12 menu" style="background-color: aqua;">Log In</div>
-              <div class="col-12 menu" style="background-color: blue;">Sign Up</div>
+              <div class="col-12 menu" style="background-color: skyblue;">Sign Up</div>
             </div>
           </div>
         </div>

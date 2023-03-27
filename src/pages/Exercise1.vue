@@ -39,7 +39,7 @@ setTimeout(() => {
 
 <style scoped>
 .game-area {
-  width: 400px;
+  width: 600px;
   height: 400px;
   border: 2px solid black;
   position: relative;
