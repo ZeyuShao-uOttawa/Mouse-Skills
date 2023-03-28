@@ -20,7 +20,7 @@
       <button class="hint-btn" @click="showHint">Hint</button>
       <div class="hint-modal" v-if="showHintModal">
         <video class="hint-video" controls>
-          <source src="./hint.mp4" type="video/mp4" />
+          <source src="" type="video/mp4" />
         </video>
         <button class="close-btn" @click="closeHint">Close</button>
       </div>
