@@ -9,6 +9,6 @@ cd dist
 git init
 git add -A
 git commit -m 'New Deployment'
-git push -f git@github.com:ZeyuShao-uOttawa/Mouse-Skills.git deployment
+git push -f git@github.com:ZeyuShao-uOttawa/Mouse-Skills-Deploy.git main
 
 cd -

@@ -25,7 +25,7 @@ setTimeout(() => {
   setTimeout(() => {
     showButton.value = false;
     gameOver.value = true;
-  }, 3000); // game ends after 30 seconds
+  }, 30000); // game ends after 30 seconds
 });
 
 function restart(){
