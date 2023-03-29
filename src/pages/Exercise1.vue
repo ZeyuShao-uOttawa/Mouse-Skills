@@ -91,21 +91,6 @@ function freeplay(){
   border-radius: 50%;
 }
 
-.btn {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  background-color: blue;
-  color: white;
-  font-size: 16px;
-  padding: 12px 24px;
-  border: solid;
-  border-color: yellow;
-  cursor: pointer;
-  border-radius: 5px;
-  text-align: center;
-}
-
 .restart {
   position: absolute;
   top: 50%;
