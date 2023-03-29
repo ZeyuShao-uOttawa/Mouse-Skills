@@ -5,12 +5,16 @@ import Exercise1 from "@/pages/Exercise1.vue";
 import Exercise2 from "@/pages/Exercise2.vue";
 import Exercise3 from "@/pages/Exercise3.vue";
 import Exercise4 from "@/pages/Exercise4.vue";
-import { createRouter, createWebHistory } from "vue-router";
+import { createRouter, createWebHashHistory, createWebHistory } from "vue-router";
 // import HomeView from "../views/HomeView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
+    // {
+    //   path: '/',
+    //   redirect: {name: 'tutorial'}
+    // },
     {
       path: "/home",
       name: "home",
