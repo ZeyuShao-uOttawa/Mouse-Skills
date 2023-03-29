@@ -1,147 +1,119 @@
-<template>
-    <div class="container">
-      <div
-        class="box"
-        :style="{ top: boxTop + 'px', left: boxLeft + 'px' }"
-        ref="box"
-        @mouseenter="respawnBox"
-      >
-        <p v-if="showMessage" class="message">Good job, you have succeeded!</p>
-      </div>
-      <div
-        class="item"
-        v-for="(item, index) in items"
-        :key="index"
-        :style="{ top: item.top + 'px', left: item.left + 'px' }"
-        ref="item"
-        @mousedown="startDrag(index)"
-        @mouseup="stopDrag(index)"
-      ></div>
-      <button class="hint-btn" @click="showHint">Hint</button>
-      <div class="hint-modal" v-if="showHintModal">
-        <iframe class="embed-responsive-item" width="800px" height="450px" src="https://www.youtube.com/embed/DalSs_Go6x4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        <button class="close-btn" @click="closeHint">Close</button>
-      </div>
-    </div>
-  </template>
-  
-  <script>
-  export default {
-    data() {
-      return {
-        dragging: false,
-        mouseX: 0,
-        mouseY: 0,
-        boxTop: 100,
-        boxLeft: 400,
-        showMessage: false,
-        items: [
-          { top: 200, left: 200 },
-          { top: 300, left: 300 },
-          { top: 400, left: 400 },
-        ],
-        showHintModal: false,
+<script>
+export default {
+  data() {
+    return {
+      email: {
+        to: '',
+        subject: '',
+        message: '',
+      },
+      showEmailComposer: false,
+      isDragging: false,
+      isCopying: false,
+    };
+  },
+  methods: {
+    composeEmail() {
+      this.showEmailComposer = true;
+    },
+    sendEmail() {
+      alert('Email sent!');
+      this.showEmailComposer = false;
+      this.email = {
+        to: '',
+        subject: '',
+        message: '',
       };
     },
-    methods: {
-      startDrag(index) {
-        this.dragging = index;
-        this.mouseX = event.clientX;
-        this.mouseY = event.clientY;
-      },
-      stopDrag(index) {
-        this.dragging = false;
-        const item = this.items[index];
-        if (
-          item.left > this.boxLeft &&
-          item.left < this.boxLeft + 100 &&
-          item.top > this.boxTop &&
-          item.top < this.boxTop + 100
-        ) {
-          this.items.splice(index, 1);
-          if (this.items.length === 0) {
-            this.respawnItems();
-          }
-          this.showMessage = true;
-        }
-      },
-      handleDrag(event) {
-        if (this.dragging !== false) {
-          const item = this.items[this.dragging];
-          item.left += event.clientX - this.mouseX;
-          item.top += event.clientY - this.mouseY;
-          this.mouseX = event.clientX;
-          this.mouseY = event.clientY;
-        }
-      },
-      respawnBox() {
-        this.boxTop = Math.random() * (window.innerHeight - 100);
-        this.boxLeft = Math.random() * (window.innerWidth - 100);
-        this.showMessage = false;
-      },
-      respawnItems() {
-        this.items = [
-          { top: 200, left: 200 },
-          { top: 300, left: 300 },
-          { top: 400, left: 400 },
-        ];
-      },
-      showHint() {
-        this.showHintModal = true;
-      },
-      closeHint() {
-        this.showHintModal = false;
-      },
+    handleMouseDown() {
+      if (!this.isDragging && !this.isCopying) {
+        this.isDragging = true;
+      } else if (this.showEmailComposer && !this.isCopying) {
+        this.isCopying = true;
+      }
     },
-    mounted() {
-      window.addEventListener("mousemove", this.handleDrag);
+    handleMouseUp() {
+      if (this.isDragging) {
+        this.isDragging = false;
+      } else if (this.isCopying) {
+        this.isCopying = false;
+        alert('Text copied!');
+      }
     },
-    beforeUnmounted() {
-      window.removeEventListener("mousemove", this.handleDrag);
-    },
-  };
-  
-  </script>
-  
-  <style scoped>
-  .hint-btn {
-  position: absolute;
-  top: 20px;
-  right: 20px;
+  },
+};
+</script>
+
+<template>
+  <div>
+    <h1>Mouse Skills Email Simulator</h1>
+    <div class="simulator">
+      <div class="left-panel">
+        <div class="folder" @mousedown=handleMouseDown @mouseup=handleMouseUp></div>
+      </div>
+      <div class="middle-panel">
+        <button @click="composeEmail">Compose Email</button>
+        <div v-if="showEmailComposer">
+          <input type="text" placeholder="To" v-model="email.to" />
+          <input type="text" placeholder="Subject" v-model="email.subject" />
+          <textarea placeholder="Write your message here" v-model="email.message"></textarea>
+          <button @click="sendEmail">Send</button>
+        </div>
+      </div>
+      <div class="right-panel">
+        <div class="clipboard" @mousedown=handleMouseDown @mouseup=handleMouseUp></div>
+      </div>
+    </div>
+    <div class="instructions">
+      <h2>Instructions:</h2>
+      <ul>
+        <li>Click and hold the folder to drag it to a new location</li>
+        <li>Click the "Compose Email" button to start composing an email</li>
+        <li>Fill in the email details and click "Send" to send the email</li>
+        <li>Click and hold the clipboard to copy and paste email text</li>
+      </ul>
+    </div>
+  </div>
+</template>
+
+<style scoped>
+.simulator {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 400px;
 }
-  .container {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.box {
-  position: absolute;
-  width: 100px;
-  height: 100px;
-  background-color: blue;
-  border-radius: 10px;
+.left-panel {
+  flex: 1;
   display: flex;
   justify-content: center;
+}
+.folder {
+  width: 100px;
+  height: 100px;
+  background-color: gray;
+  cursor: move;
+}
+.middle-panel {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  cursor: pointer;
-  transition: top 0.5s, left 0.5s;
 }
-
-.message {
-  color: white;
-  font-size: 24px;
-  font-weight: bold;
-  text-align: center;
+.right-panel {
+  flex: 1;
+  display: flex;
+  justify-content: center;
 }
-
-.item {
-  position: absolute;
-  width: 50px;
-  height: 50px;
-  background-color: red;
-  border-radius: 10px;
-  cursor: grab;
+.clipboard {
+  width: 100px;
+  height: 100px;
+  background-color: white;
+  border: 2px solid black;
+  cursor: copy;
+}
+.instructions {
+  margin-top: 50px;
 }
 </style>
-  

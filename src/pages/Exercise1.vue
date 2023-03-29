@@ -6,6 +6,10 @@ const showButton = ref(false);
 const score = ref(0);
 const gameOver = ref(false);
 const freePlay= ref(false);
+const startTime = ref(0);
+const totalTime = ref(30);
+const elapsedTime = ref(0);
+const remainingTime = ref(totalTime.value);
 
 function handleClick() {
   position_x = Math.random() * (1000-50);
@@ -20,24 +24,36 @@ function handleClick() {
     gameOver.value = true;
   }
 }
-setTimeout(() => {
+// setTimeout(() => {
+  
+//   showButton.value = true;
+//   setTimeout(() => {
+//     showButton.value = false;
+//     gameOver.value = true;
+//   }, 30000); // game ends after 30 seconds
+// });
+startGame();
+
+
+function startGame(){
+  score.value = 0;
+  gameOver.value = false;
   showButton.value = true;
+  startTime.value = Date.now();
+
+  // setTimeout(() => {
+  // showButton.value = true;
+  setInterval(() => {
+    const currentTime = Date.now();
+    elapsedTime.value = Math.round((currentTime - startTime.value) / 1000);
+    remainingTime.value = Math.max(totalTime.value - elapsedTime.value, 0);
+  }, 1000); // update remaining time every second
+
   setTimeout(() => {
     showButton.value = false;
     gameOver.value = true;
-  }, 30000); // game ends after 30 seconds
-});
-
-function restart(){
-  score.value = 0;
-  gameOver.value = false;
-  setTimeout(() => {
-  showButton.value = true;
-    setTimeout(() => {
-      showButton.value = false;
-      gameOver.value = true;
-    }, 30000); // game ends after 30 seconds
-  });
+  }, totalTime.value * 1000); // game ends after 30 seconds
+  // });
 }
 
 function freeplay(){
@@ -48,13 +64,14 @@ function freeplay(){
 
 <template>
   <div class="container-fluid" style="text-align: center; margin: auto; height: 92vh;">
-    <h1>Click the button as fast as you can!</h1>
+    <h1>Click the button as much as you can!</h1>
     <div class="game-area" style="margin:auto;">
       <button v-if="(showButton && !gameOver) || (showButton && freePlay)" id="game-button" @click="handleClick" :style="{ top: position_y + 'px', left: position_x + 'px' }"></button>
-      <button class="restart" v-if="gameOver && !freePlay" @click="restart">Restart Game</button>
+      <button class="restart" v-if="gameOver && !freePlay" @click="startGame">Restart Game</button>
       <button class="freeplay" v-if="gameOver && !freePlay" @click="freeplay">Freeplay</button>
     </div>
     <p v-if="gameOver || freePlay">Game over! Your score is {{ score }}.</p>
+    <p v-if="!gameOver">Time Remaining: {{remainingTime}}</p>
   </div>
 </template>
 

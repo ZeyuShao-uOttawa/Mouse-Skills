@@ -1,5 +1,8 @@
 <script setup lang="ts">
 import { RouterLink } from "vue-router";
+import Drag from "@/assets/Drag.png";
+import Leftclick from "@/assets/leftclick.png";
+import Outlook from "@/assets/outlook.png";
 </script>
 
 <template>
@@ -11,7 +14,7 @@ import { RouterLink } from "vue-router";
                 <div class="col-lg-3" id="project-card-div">
                 <a class="card-link" href="#"><RouterLink class="navbar-brand" to="/exercise1">
                     <div class="card" id="project-card">
-                    <img src="" class="card-img-top" alt="NOT LOADING" id="project-img">
+                    <img :src=Leftclick class="card-img-top" alt="NOT LOADING" id="project-img">
                     <div class="card-body">
                         <h3 class="card-title">Left Click Exercise</h3>
                     </div>
@@ -22,9 +25,9 @@ import { RouterLink } from "vue-router";
 
                 </div>
                 <div class="col-lg-3" id="project-card-div">
-                <a class="card-link" href="#"><RouterLink class="navbar-brand" to="/exercise4">
+                <a class="card-link" href="#"><RouterLink class="navbar-brand" to="/exercise2">
                     <div class="card" id="project-card">
-                    <img src="" class="card-img-top" alt="NOT LOADING" id="project-img">
+                    <img :src=Drag class="card-img-top" alt="NOT LOADING" id="project-img">
                     <div class="card-body">
                         <h3 class="card-title">Drag Exercise</h3>
                     </div>
@@ -37,7 +40,7 @@ import { RouterLink } from "vue-router";
                 <div class="col-lg-3" id="project-card-div">
                 <a class="card-link" href="#"><RouterLink class="navbar-brand" to="/exercise3">
                     <div class="card" id="project-card">
-                    <img src="" class="card-img-top" alt="NOT LOADING" id="project-img">
+                    <img :src=Outlook class="card-img-top" alt="NOT LOADING" id="project-img">
                     <div class="card-body">
                         <h3 class="card-title">Email Exercise</h3>
                     </div>
