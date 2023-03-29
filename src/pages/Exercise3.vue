@@ -1,17 +1,19 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-// import emailInital from '@/assets/email.png';
-var emailInital = ref('/src/assets/email.png');
+import emailInital from '@/assets/email.png';
+import emailCompose from '@/assets/emailpart2.png';
+
+var email = emailInital;
 var compose = ref(false);
 var emailSent = ref(false);
 
 function newEmail(){
-  emailInital.value = '/src/assets/emailpart2.png';
+  email = emailCompose;
   compose.value = true;
 }
 
 function sendEmail(){
-  emailInital.value = '/src/assets/email.png';
+  email = emailInital;
   compose.value = false;
   alert("You have successfully send a email, press new mail to send another one");
 }
@@ -24,7 +26,7 @@ function sendEmail(){
     <div class="container" style="text-align: center; margin: auto; height: 92vh;">
       <h1>Mouse Skills Email Simulator</h1>
       <div class="email">
-        <img :src="emailInital" alt="My Image" style="width:1280px; height:720px;">
+        <img :src="email" alt="My Image" style="width:1280px; height:720px;">
         <button v-if="!compose" class="btn newEmail" @click="newEmail">+ New Email</button>
         <button v-if="compose" class="btn sendEmail" @click="sendEmail">Send Email</button>
         <textarea v-if="compose" class="to" placeholder="This is you are sending the email to, type an email here"></textarea>
