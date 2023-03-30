@@ -75,8 +75,7 @@ function freeplay(){
     <h1>Click the button as much as you can before time runs out!</h1>
     <button class="hint-btn" @click="showHint">Hint</button>
     <div class="hint-modal" v-if="showHintModal" style="position: absolute; z-index: 10; top: 15%; left: 22%">
-      <iframe class="embed-responsive-item" width="800px" height="450px" src="https://www.youtube.com/embed/LMzt6qONLlw" title="Mouse-E Drag Tutorial" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-      <button class="close-btn" @click="closeHint">Close</button>
+      <iframe class="embed-responsive-item" width="800px" height="450px" src="https://www.youtube.com/embed/1POk6Kc4SU8" title="Left Click Tutorial" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </div>
     <div class="game-area" style="margin:auto;">
       <button v-if="(showButton && !gameOver) || (showButton && freePlay)" id="game-button" @click="handleClick" :style="{ top: position_y + 'px', left: position_x + 'px' }"></button>
