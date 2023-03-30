@@ -35,7 +35,7 @@ function sendEmail(){
       <h1>Mouse Skills Email Simulator</h1>
       <button class="hint-btn" @click="showHint">Hint</button>
       <div class="hint-modal" v-if="showHintModal" style="position: absolute; z-index: 10; top: 15%; left: 22%">
-        <iframe class="embed-responsive-item" width="800px" height="450px" src="https://www.youtube.com/embed/LMzt6qONLlw" title="Mouse-E Drag Tutorial" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <iframe class="embed-responsive-item" width="800px" height="450px" src="https://www.youtube.com/embed/iQDdaLTMuA4" title="Mouse E Email Simulation" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> 
         <button class="close-btn" @click="closeHint">Close</button>
       </div>
       <div class="email">
