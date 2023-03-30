@@ -64,7 +64,7 @@ function freeplay(){
 
 <template>
   <div class="container-fluid" style="text-align: center; margin: auto; height: 92vh;">
-    <h1>Click the button as much as you can!</h1>
+    <h1>Click the button as much as you can before time runs out!</h1>
     <div class="game-area" style="margin:auto;">
       <button v-if="(showButton && !gameOver) || (showButton && freePlay)" id="game-button" @click="handleClick" :style="{ top: position_y + 'px', left: position_x + 'px' }"></button>
       <button class="restart" v-if="gameOver && !freePlay" @click="startGame">Restart Game</button>
