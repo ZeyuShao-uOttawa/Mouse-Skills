@@ -19,7 +19,7 @@
     ></div>
     <button class="hint-btn" @click="showHint">Hint</button>
     <div class="hint-modal" v-if="showHintModal">
-      <iframe class="embed-responsive-item" width="800px" height="450px" src="https://www.youtube.com/embed/DalSs_Go6x4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      <iframe class="embed-responsive-item" width="800px" height="450px" src="https://www.youtube.com/embed/LMzt6qONLlw" title="Mouse-E Drag Tutorial" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
       <button class="close-btn" @click="closeHint">Close</button>
     </div>
   </div>
