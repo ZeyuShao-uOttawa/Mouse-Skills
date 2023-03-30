@@ -59,7 +59,7 @@ function sendEmail(){
 }
 
 .sendEmail {
-  transform: translate(500px, -350px);
+  transform: translate(470px, -350px);
   -ms-transform: translate(500px, -350px);
 }
 
