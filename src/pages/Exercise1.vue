@@ -11,6 +11,14 @@ const totalTime = ref(30);
 const elapsedTime = ref(0);
 const remainingTime = ref(totalTime.value);
 
+const showHintModal = ref(false);
+function showHint() {
+  showHintModal.value = true;
+}
+function closeHint() {
+  showHintModal.value = false;
+}
+
 function handleClick() {
   position_x = Math.random() * (1000-50);
   position_y = Math.random() * (600-50);
@@ -65,6 +73,11 @@ function freeplay(){
 <template>
   <div class="container-fluid" style="text-align: center; margin: auto; height: 92vh;">
     <h1>Click the button as much as you can before time runs out!</h1>
+    <button class="hint-btn" @click="showHint">Hint</button>
+    <div class="hint-modal" v-if="showHintModal" style="position: absolute; z-index: 10; top: 15%; left: 22%">
+      <iframe class="embed-responsive-item" width="800px" height="450px" src="https://www.youtube.com/embed/LMzt6qONLlw" title="Mouse-E Drag Tutorial" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      <button class="close-btn" @click="closeHint">Close</button>
+    </div>
     <div class="game-area" style="margin:auto;">
       <button v-if="(showButton && !gameOver) || (showButton && freePlay)" id="game-button" @click="handleClick" :style="{ top: position_y + 'px', left: position_x + 'px' }"></button>
       <button class="restart" v-if="gameOver && !freePlay" @click="startGame">Restart Game</button>

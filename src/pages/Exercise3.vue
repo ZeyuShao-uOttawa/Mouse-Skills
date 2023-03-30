@@ -7,6 +7,14 @@ var email = emailInital;
 var compose = ref(false);
 var emailSent = ref(false);
 
+const showHintModal = ref(false);
+function showHint() {
+  showHintModal.value = true;
+}
+function closeHint() {
+  showHintModal.value = false;
+}
+
 function newEmail(){
   email = emailCompose;
   compose.value = true;
@@ -25,6 +33,11 @@ function sendEmail(){
   <div class="email">
     <div class="container" style="text-align: center; margin: auto; height: 92vh;">
       <h1>Mouse Skills Email Simulator</h1>
+      <button class="hint-btn" @click="showHint">Hint</button>
+      <div class="hint-modal" v-if="showHintModal" style="position: absolute; z-index: 10; top: 15%; left: 22%">
+        <iframe class="embed-responsive-item" width="800px" height="450px" src="https://www.youtube.com/embed/LMzt6qONLlw" title="Mouse-E Drag Tutorial" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <button class="close-btn" @click="closeHint">Close</button>
+      </div>
       <div class="email">
         <img :src="email" alt="My Image" style="width:1280px; height:720px;">
         <button v-if="!compose" class="btn newEmail" @click="newEmail">+ New Email</button>
